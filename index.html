@@ -14,6 +14,10 @@
           spellcheck="false"
         />
       </div>
+      <div class="keyError">
+        <p>Invalid api key</p>
+      </div>
+
       <div class="search">
         <input
           type="text"
@@ -50,8 +54,7 @@
     </div>
 
     <script>
-      const apiKey = "";
-
+      const apiKey = document.querySelector(".keyInput input");
       const apiUrl =
         "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
       const searchBox = document.querySelector(".search input");
@@ -59,10 +62,16 @@
       const weatherIcon = document.querySelector(".weather-icon");
 
       async function checkWeather(city) {
-        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-        if (response.status === 404) {
+        console.log(apiKey.value);
+        const response = await fetch(apiUrl + city + `&appid=${apiKey.value}`);
+        if (response.status === 401) {
+          document.querySelector(".weather").style.display = "none";
+          document.querySelector(".keyError").style.display = "block";
+          document.querySelector(".error").style.display = "none";
+        } else if (response.status === 404) {
           document.querySelector(".weather").style.display = "none";
           document.querySelector(".error").style.display = "block";
+          document.querySelector(".keyError").style.display = "none";
         } else {
           const data = await response.json();
 
@@ -89,6 +98,7 @@
 
           document.querySelector(".weather").style.display = "block";
           document.querySelector(".error").style.display = "none";
+          document.querySelector(".keyError").style.display = "none";
         }
       }
 
