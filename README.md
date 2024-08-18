@@ -1,25 +1,14 @@
 # weatherApp
 
-### …or create a new repository on the command line
+Create a Weather App for Website using HTML CSS and JavaScript.
+We will get the current weather data from API from OpenWeatherMap and display the weather information like Temperature, Weather condition, Humidity and Wind Speed according to the city on our website or app.
 
+We will display the weather info on website from Free API using JavaScript.
 
+In this weather app, first, you need to input your api Key in OpenWeather(www.openweathermap.org), if your api Key is invalid, you will get a prompt showing invalid.
 
-```
-echo "# weatherApp" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/KevinYih/weatherApp.git
-git push -u origin main
-```
+And then, you need to input the name of the city you want to search. If the name of the city is invalid, you will get a prompt showing invalid.
 
-### …or push an existing repository from the command line
+Finally, we can get get the weather information of the particular city, when we click the search button.
 
-
-
-```
-git remote add origin https://github.com/KevinYih/weatherApp.git
-git branch -M main
-git push -u origin main
-```
+In this weather app we will add one search box where user can enter the city name and get the weather information of the particular city.
