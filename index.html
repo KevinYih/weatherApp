@@ -61,6 +61,7 @@
       const searchBox = document.querySelector(".search input");
       const searchBtn = document.querySelector(".search button");
       const weatherIcon = document.querySelector(".weather-icon");
+      const cardBg = document.querySelector(".card");
 
       async function checkWeather(city) {
         const response = await fetch(apiUrl + city + `&appid=${apiKey.value}`);
@@ -87,22 +88,33 @@
 
           if (data.weather[0].main === "Clouds") {
             weatherIcon.src = "images/clouds.png";
+            cardBg.style.backgroundImage = "url('images/bg_clouds.jpg')";
+            cardBg.style.backgroundSize = "cover";
           } else if (data.weather[0].main === "Clear") {
             weatherIcon.src = "images/clear.png";
+            cardBg.style.backgroundImage = "url('images/bg_clear.jpg')";
+            cardBg.style.backgroundSize = "cover";
           } else if (data.weather[0].main === "Rain") {
             weatherIcon.src = "images/rain.png";
+            cardBg.style.backgroundImage = "url('images/bg_rain.jpg')";
+            cardBg.style.backgroundSize = "cover";
           } else if (data.weather[0].main === "Drizzle") {
             weatherIcon.src = "images/drizzle.png";
+            cardBg.style.backgroundImage = "url('images/bg_drizzle.jpg')";
+            cardBg.style.backgroundSize = "cover";
           } else if (data.weather[0].main === "Mist") {
             weatherIcon.src = "images/mist.png";
+            cardBg.style.backgroundImage = "url('images/bg_mist.jpg')";
+            cardBg.style.backgroundSize = "cover";
           } else if (data.weather[0].main === "Snow") {
             weatherIcon.src = "images/snow.png";
+            cardBg.style.backgroundImage = "url('images/bg_snow.jpg')";
+            cardBg.style.backgroundSize = "cover";
+          } else if (data.weather[0].main === "Thunderstorm") {
+            weatherIcon.src = "images/rain.png";
+            cardBg.style.backgroundImage = "url('images/bg_thunderstorm.jpg')";
+            cardBg.style.backgroundSize = "cover";
           }
-          // else if (data.weather[0].main === "Thunderstorm") {
-          //   weatherIcon.src = "images/rain.png";
-          //   document.card.style.backgroundImage =
-          //     "url('images/bg_Thunderstorm.jpg')";
-          // }
 
           document.querySelector(".weather").style.display = "block";
           document.querySelector(".error").style.display = "none";
@@ -112,6 +124,7 @@
 
       searchBtn.addEventListener("click", () => {
         checkWeather(searchBox.value);
+        // document.card.style.background = "url('images/bg_Thunderstorm.jpg')";
       });
 
       searchBtn.addEventListener("click", () => {

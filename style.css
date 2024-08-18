@@ -12,11 +12,11 @@ body {
   width: 90%;
   max-width: 470px;
   background: linear-gradient(135deg, #eb5910, #22b991);
-  /* background-image: url("images/bg_clouds.png");
+  /* background-image: url("images/bg_clear.jpg"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: background-image 0.5s ease; */
+  /* transition: background-image 0.5s ease; */
 
   color: #fff;
   margin: 100px auto 0;
