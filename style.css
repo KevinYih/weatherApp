@@ -38,8 +38,8 @@ body {
   background: #ebfffc;
   color: #555;
   padding: 10px 20px;
-  height: 60px;
-  border-radius: 30px;
+  height: 25px;
+  border-radius: 10px;
   flex: 1;
   margin-right: 16px;
   margin-bottom: 15px;
@@ -59,11 +59,11 @@ body {
   background: #ebfffc;
   color: #555;
   padding: 10px 20px;
-  height: 60px;
+  height: 40px;
   border-radius: 30px;
   flex: 1;
   margin-right: 16px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .search button {
