@@ -19,6 +19,27 @@ body {
   text-align: center;
 }
 
+.keyInput {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.keyInput input {
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  color: #555;
+  padding: 10px 20px;
+  height: 60px;
+  border-radius: 30px;
+  flex: 1;
+  margin-right: 16px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
 .search {
   width: 100%;
   display: flex;
@@ -93,4 +114,16 @@ body {
 .wind {
   font-size: 28px;
   margin-top: 6px;
+}
+
+.weather {
+  display: none;
+}
+
+.error {
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
 }
