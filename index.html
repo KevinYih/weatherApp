@@ -34,6 +34,7 @@
         <img src="images/blank.png" class="weather-icon" />
         <h1 class="temp">00℃</h1>
         <h2 class="city">city</h2>
+        <h3 class="country">country</h3>
         <div class="details">
           <div class="col">
             <img src="images/humidity.png" />
@@ -62,7 +63,6 @@
       const weatherIcon = document.querySelector(".weather-icon");
 
       async function checkWeather(city) {
-        console.log(apiKey.value);
         const response = await fetch(apiUrl + city + `&appid=${apiKey.value}`);
         if (response.status === 401) {
           document.querySelector(".weather").style.display = "none";
@@ -75,12 +75,15 @@
         } else {
           const data = await response.json();
 
+          console.log(data);
+
           document.querySelector(".city").innerHTML = data.name;
           document.querySelector(".temp").innerHTML =
             Math.round(data.main.temp) + "℃";
           document.querySelector(".humidity").innerHTML =
             data.main.humidity + "%";
           document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+          document.querySelector(".country").innerHTML = data.sys.country;
 
           if (data.weather[0].main === "Clouds") {
             weatherIcon.src = "images/clouds.png";
@@ -95,12 +98,21 @@
           } else if (data.weather[0].main === "Snow") {
             weatherIcon.src = "images/snow.png";
           }
+          // else if (data.weather[0].main === "Thunderstorm") {
+          //   weatherIcon.src = "images/rain.png";
+          //   document.card.style.backgroundImage =
+          //     "url('images/bg_Thunderstorm.jpg')";
+          // }
 
           document.querySelector(".weather").style.display = "block";
           document.querySelector(".error").style.display = "none";
           document.querySelector(".keyError").style.display = "none";
         }
       }
+
+      searchBtn.addEventListener("click", () => {
+        checkWeather(searchBox.value);
+      });
 
       searchBtn.addEventListener("click", () => {
         checkWeather(searchBox.value);
