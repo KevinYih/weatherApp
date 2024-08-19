@@ -11,8 +11,9 @@ body {
 .card {
   width: 90%;
   max-width: 470px;
-  background: linear-gradient(135deg, #eb5910, #22b991);
-  /* background-image: url("images/bg_clear.jpg"); */
+  background: #222;
+  /* linear-gradient(135deg, #eb5910, #22b991); */
+  background-image: url("images/cardBg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,6 +24,11 @@ body {
   border-radius: 20px;
   padding: 40px 35px;
   text-align: center;
+}
+
+.logo {
+  color: #5271ff;
+  margin-bottom: 20px;
 }
 
 .keyInput {
